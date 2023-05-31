@@ -6,8 +6,8 @@
 - [Pre-requisites](#pre-requisites)
 - [Libraries](#libraries)
 - [Reporting](#Reporting)
-- [Running Through IntelliJ](#Running Through IntelliJ)
-- [Important Note](#Important Note)
+- [Running Through IntelliJ](#intelliJ)
+- [Important Notes](#notes)
 
 ## Authors
 
@@ -86,7 +86,7 @@ All the scenarios will be executed unless the tag group is specified. In the com
 Please navigate to "RootProjectDirectory/lib/build/test-report/cucumber-html-reports/" directory.
 Open "overview-features.html" to see the extended Cucumber Report and screenshots
 
-## Running Through IntelliJ
+## IntelliJ
 You can also execute the test scenarios through IntelliJ and there are multiple execution options.
 
 ### Locally
@@ -112,7 +112,15 @@ Bring the docker containers `down` after the test is done by executing the comma
 docker-compose down
 ```
 
-## Important Note
+## Notes
 
+### Possibly Failed tests
 Sometimes one or more test steps might fail due detected issues on the testing site
+
+### Additional configuration need
+There is known issue on Windows OS with "geckodriver.exe". 
+
+Please do the configuration or specify your valid path to the "geckodriver.exe" as it's described in "WebDriverManager.java" file in the line 43
+
+Please disable this line if you are using macOS
 
