@@ -86,4 +86,3 @@ public class FormPage {
         submitButton.click();
     }
 }
-

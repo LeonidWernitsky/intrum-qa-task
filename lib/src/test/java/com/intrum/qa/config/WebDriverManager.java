@@ -39,8 +39,8 @@ public class WebDriverManager {
      */
     public WebDriver webDriverFactory() throws IOException {
         if (properties.getContext().equalsIgnoreCase(CONTEXT)) {
-            // TODO fix path and remove this line
-            System.setProperty("webdriver.gecko.driver", "C:\\SeleniumGecko\\geckodriver.exe");
+            // Use README.md to get more details in "Additional configuration need" article
+            System.setProperty("webdriver.gecko.driver", "C:\\Webdriver\\geckodriver.exe");
             return new FirefoxDriver();
         }
         return getRemoteWebDriver(properties.getBrowser());
@@ -53,5 +53,4 @@ public class WebDriverManager {
         }
         return new RemoteWebDriver(new URL(remote), new FirefoxOptions());
     }
-
 }

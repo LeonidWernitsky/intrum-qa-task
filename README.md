@@ -1,5 +1,11 @@
 # Demo Spring Selenium Automation Project
 
+## Introduction
+
+This is the Homework to create the Test Automation solution with the defined stack of technologies for the designated testing page.
+
+In fact that is just working conception as POC which for the real implementation should be improved and configured (tools like Checkstyle or SpotBugs) in accordance with the Company Rules, Policies and existing CI realization.
+
 ## Table of Contents
 
 - [Authors](#authors)
@@ -20,6 +26,7 @@ Please download and install these properly on your system. Visit the websites (l
 * [Java JDK 11](https://www.java.com/en/download/)
 * [Gradle 8.1.1 or later](https://gradle.org/)
 * [Firefox 79.0 or later](https://www.mozilla.org/)
+* [Selenium GeckoDriver](https://www.toolsqa.com/selenium-webdriver/selenium-geckodriver/)
 
 ## Libraries
 
@@ -86,6 +93,17 @@ All the scenarios will be executed unless the tag group is specified. In the com
 Please navigate to "RootProjectDirectory/lib/build/test-report/cucumber-html-reports/" directory.
 Open "overview-features.html" to see the extended Cucumber Report and screenshots
 
+There are six logging levels used by SLF4J (in order):
+
+* Trace (the least serious)
+* Debug
+* Info
+* Warn
+* Error
+* Fatal (the most serious)
+
+Use `ROOT` property in `application.yml` file to define your logging level.
+ 
 ## IntelliJ
 You can also execute the test scenarios through IntelliJ and there are multiple execution options.
 
@@ -118,9 +136,13 @@ docker-compose down
 Sometimes one or more test steps might fail due detected issues on the testing site
 
 ### Additional configuration need
-There is known issue on Windows OS with "geckodriver.exe". 
+There is known issue with "geckodriver.exe". 
 
+If you are using  Windows OS,
 Please do the configuration or specify your valid path to the "geckodriver.exe" as it's described in "WebDriverManager.java" file in the line 43
 
-Please disable this line if you are using macOS
+If you are using macOS,
+Please add the driver file in /usr/local/bin and disable the line 43 in "WebDriverManager.java" file
+
+Please find more details here https://www.toolsqa.com/selenium-webdriver/selenium-geckodriver/
 

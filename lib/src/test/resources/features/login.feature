@@ -1,7 +1,6 @@
 @login
 Feature: Login
 
-
   @smoke
   Scenario: Submit with wrong values
     Given I open Initial Page

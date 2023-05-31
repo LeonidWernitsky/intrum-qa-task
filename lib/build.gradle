@@ -8,6 +8,7 @@
 
 import net.masterthought.cucumber.ReportBuilder
 import net.masterthought.cucumber.Configuration
+
 buildscript {
     repositories {
         mavenCentral()
@@ -45,9 +46,6 @@ ext {
 
 dependencies {
 
-    // Use TestNG framework, also requires calling test.useTestNG() below
-    // testImplementation 'org.testng:testng:7.5'
-
     // Cucumber as testing framework for web application automation
     testImplementation "io.cucumber:cucumber-java:$cucumber"
     testImplementation "io.cucumber:cucumber-testng:$cucumber"
@@ -70,13 +68,6 @@ dependencies {
     testAnnotationProcessor "org.projectlombok:lombok:$lombok"
 }
 
-// Apply a specific Java toolchain to ease working on different environments.
-/*java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(11)
-    }
-}
-*/
 test {
     useTestNG()
     systemProperties(System.properties) // can be used for running a subset of scenarios
@@ -128,9 +119,13 @@ tasks.withType(JavaCompile) {
 checkstyle {
     configFile = file("${rootDir}/checkstyle.xml")
 }
-checkstyleMain {
-    source ='src/main/java'
-}
 checkstyleTest {
     source ='src/test/java'
+}
+
+tasks.withType(Checkstyle) {
+    reports {
+        xml.required = true
+        html.required = true
+    }
 }
