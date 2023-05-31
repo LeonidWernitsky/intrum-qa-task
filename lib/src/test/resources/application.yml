@@ -1,0 +1,9 @@
+context: remote
+
+browser: firefox
+
+host: https://www.intrum.lv/saistibu-parvaldisana/sazinieties-ar-mums/
+
+logging:
+  level:
+    ROOT: INFO

@@ -1,0 +1,11 @@
+
+   /*
+    * application.yml file will be the default profile and the application-test.yml will be considered a "test" profile.
+    * the application-test.yml will be considered a "test" profile.
+    * As a pattern, Spring understands the profile name as the value that appears after "-" on the file name
+    * If run tests without setting the profile, it will run and use the default values set on the application.yml file
+    * To set a profile different from the default we need to pass it as an environment variable, for example
+    * SPRING_PROFILES_ACTIVE=test ./gradlew test
+    */
+
+host: https://test.signe.lv/en/
